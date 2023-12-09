@@ -9,7 +9,7 @@ unsigned int ipToInt(char *ip_addr)
 
     // Split the Ip address into octets
     int octets[4];
-    if (sscanf(ip_addr, "%d.%d.%d.%d", &octets[0], &octets[1], &octets[2], &octets[3]) != 4) {
+    if (sscanf_s(ip_addr, "%d.%d.%d.%d", &octets[0], &octets[1], &octets[2], &octets[3]) != 4) {
         // Handle invalid IP address format
         fprintf(stderr, "Invalid IP address format\n");
         exit(EXIT_FAILURE);
