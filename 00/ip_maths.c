@@ -5,7 +5,6 @@
 unsigned int ipToInt(char *ip_addr)
 {
     unsigned int ipInt = 0;
-    int octet;
 
     // Split the Ip address into octets
     int octets[4];
