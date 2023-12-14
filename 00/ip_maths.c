@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-unsigned int ipToInt(char *ip_addr)
-{
+unsigned int 
+ipToInt(char *ip_addr) {
     unsigned int ipInt = 0;
 
     // Split the Ip address into octets
@@ -26,8 +26,8 @@ unsigned int ipToInt(char *ip_addr)
     return ipInt;
 }
 
-void get_broadcast_address(char *ip_addr, int subnet_mask, char *output_buffer)
-{
+void 
+get_broadcast_address(char *ip_addr, int subnet_mask, char *output_buffer) {
     unsigned int ipInt = ipToInt(ip_addr);
     unsigned int mask = (~0) << (32 - subnet_mask);
     unsigned int broadcastAddr = (ipInt | ~mask);
@@ -39,8 +39,7 @@ void get_broadcast_address(char *ip_addr, int subnet_mask, char *output_buffer)
              broadcastAddr & 0xFF);
 }
 
-int main(void)
-{
+int main(void) {
     char output_buffer[16];
     get_broadcast_address("192.168.1.1", 24, output_buffer);
 
